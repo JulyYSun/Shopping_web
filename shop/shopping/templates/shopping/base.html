@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content= "{% block 关键词 %}小米8,小米,手机{% endblock 关键词 %}">
+    <meta name="description" content= "{% block 网页描述 %}这是小米商城{% endblock 网页描述 %}">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block 网页标题 %} 这是小米商城 {% endblock 网页标题 %}</title>
+</head>
+<body>
+
+    {% include "shopping/header.html" %}
+    {% include "shopping/nav.html" %}
+    <main>
+        {% block 主体 %}
+
+        {% endblock 主体 %}  
+    </main>
+    {% include "shopping/footer.html" %}
+    
+
+</body>
+</html>

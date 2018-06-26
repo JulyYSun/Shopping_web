@@ -1,0 +1,15 @@
+{% extends "shopping/base.html" %}
+{% load static %}
+
+{% block 主体 %}
+    {% for 每个类别,该类商品 in 类别与商品 %}
+    {{ 每部手机.名称 }}
+    <br>
+    {{ 每部手机.描述 }}
+    <br>
+    <img src="{{ 每部手机.图片.url }}" alt="手机图片">
+    
+    <br>
+
+    {% endfor %}
+{% endblock 主体 %}
