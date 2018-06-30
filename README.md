@@ -1,1 +1,1 @@
-# blog_project_venv
+first django project
