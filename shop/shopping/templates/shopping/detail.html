@@ -1,1 +1,17 @@
 {% extends "shopping/base.html" %}
+{% load static %}
+{% block 关键词 %}小米8,小米,手机{% endblock 关键词 %}
+{% block 网页描述 %}这是小米商城{% endblock 网页描述 %}
+{% block 网页标题 %} 立即购买--小米商城 {% endblock 网页标题 %}
+{% block 主体 %}
+
+    <h2>{{商品.名称}}</h2>
+    <p>{{商品.描述}}</p>
+    <img src="{{商品.图片.url}}" alt="">
+    {% if 商品.库存 > 0 %}
+        <p>库存{{商品.库存}}</p>
+    {% else %}
+        <p>暂时缺货</p>
+    {% endif %}
+    <h4>{{商品.价格}}   </h4>
+{% endblock 主体 %}

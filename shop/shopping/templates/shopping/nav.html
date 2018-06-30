@@ -1,4 +1,11 @@
 <nav>
-    <a href="{% url 'shopping:总览页' %}">所有商品</a>
+    <a href="{% url 'shopping:总览页' %}">所有商品</a>  
+    {#所有商品可以点击打开一个链接，链接地址是shopping这个app的总览页
+        'shopping:总览页'  对应  urls 中shopping的name属性
+        要打开哪个网页就写shopping：要打开的网页的名称#}
+    {% for 每个类别 in 所有类别 %}
+        {#每个类别.id  作为参数返回到views.单类页（）函数中#}
+        <a href="{% url 'shopping:单类页' 每个类别.id %}">{{每个类别.名称}}</a>
+    {% endfor %}
     <a href="#">购物车</a>
 </nav>

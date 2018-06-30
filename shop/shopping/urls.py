@@ -18,5 +18,9 @@ from django.urls import path ,include
 from .import views
 app_name="shopping"
 urlpatterns=[
+    #主页，views.总览页表示执行的方法，返回到shopping/home.html
     path('',views.总览页,name='总览页'),
+    #'<每个类别_id>/' 表示打开的链接的网址显示类似于www.baidu.com/2
+    path('<每个类别_id>/',views.单类页,name='单类页'),
+    path('<每个类别_id>/<每件商品_id>/',views.详情页,name='详情页'),
 ]

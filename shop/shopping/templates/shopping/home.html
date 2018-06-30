@@ -1,15 +1,26 @@
 {% extends "shopping/base.html" %}
 {% load static %}
 
+{# {% block 主体 %} 中的内容用于替换base.html中的{% block 主体 %}部分 #}
 {% block 主体 %}
     {% for 每个类别,该类商品 in 类别与商品 %}
-    {{ 每部手机.名称 }}
-    <br>
-    {{ 每部手机.描述 }}
-    <br>
-    <img src="{{ 每部手机.图片.url }}" alt="手机图片">
-    
-    <br>
+
+        <h2>{{每个类别.名称}}</h2>
+        <img src="{{每个类别.图片.url}}" alt="每个类别.名称">
+
+        {% for 每件商品 in 该类商品 %}
+            <h3>
+                {#每个类别.id 每件商品.id  作为参数返回到views.详情页()函数中#}
+                <a href="{% url 'shopping:详情页' 每个类别.id 每件商品.id %}">{{每件商品.名称}}</a>
+            </h3>
+            <p>{{每件商品.描述}}</p>
+            <br>
+            <img src="{{ 每件商品.图片.url }}" alt="每件商品.名称">
+            <br>
+            <h4>{{每件商品.价格}}元</h4>
+            <br>
+        
+        {% endfor %}
 
     {% endfor %}
 {% endblock 主体 %}

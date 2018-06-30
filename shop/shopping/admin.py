@@ -4,6 +4,8 @@ from .models import 商品类别表,产品列表
 
 class 商品类别表Admin(admin.ModelAdmin):
     list_display=['id','名称','图片']
+    
+#注册要显示的列表
 admin.site.register(商品类别表,商品类别表Admin)
 
 class 产品列表Admin(admin.ModelAdmin):
